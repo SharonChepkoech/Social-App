@@ -16,12 +16,12 @@ class DebateSerializer(serializers.ModelSerializer):
 class ParticipantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Participant
-        fields = ("id","user","role","time_joined","time_left",)
+        fields = ("participant_id","user","role","time_joined","time_left",)
 
 # News article - id, title, body, time created, 
 
 class NewsArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = NewsArticle
-        fields = ("id","title","body","time",)
+        fields = ("news_article_id","title","body",)
 
