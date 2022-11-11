@@ -36,6 +36,7 @@ class NewsArticle(models.Model):
 PRIVACY_STATUS_CHOICES = (('Private','Private'),('Public','Public'))
 class Debate(models.Model):
     title = models.CharField(max_length = 25)
+    user =  models.ForeignKey(User,on_delete = models.CASCADE,related_name='debate_user')
     debate_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     news_article = models.ForeignKey(NewsArticle,on_delete = models.CASCADE,related_name='debate_article')
     time_created = models.DateTimeField(null = True,blank= True) 
